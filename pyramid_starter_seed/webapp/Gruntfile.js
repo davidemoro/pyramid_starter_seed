@@ -273,9 +273,9 @@ module.exports = function (grunt) {
 
         // Replace Google CDN references
         cdnify: {
-              dist: {
-                  html: ['<%= config.dist %>/*.html']
-              }
+            dist: {
+                html: ['<%= config.dist %>/*.html']
+            }
         },
         uncss: {
             dist: {
