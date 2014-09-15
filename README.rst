@@ -13,6 +13,8 @@ Prerequisites
 Installation
 ------------
 
+Open your shell and digit::
+
     $ git clone git@github.com:davidemoro/pyramid_starter_seed.git
     $ cd pyramid_starter_seed
     $ YOUR_VIRTUALENV_PYTHON_PATH/bin/python setup.py develop
@@ -24,11 +26,19 @@ Installation
 How to run
 ----------
 
-Come back to the first level dir of pyramid_starter_seed (where .ini file lives):
+Come back to the first level dir of pyramid_starter_seed (where .ini file lives)::
+
     $ cd ../..
 
-Devel mode:
+Devel mode::
+
     $ YOUR_VIRTUALENV_PYTHON_PATH/bin/pserve development.ini
-Production mode:
+    
+Production mode::
+
     $ YOUR_VIRTUALENV_PYTHON_PATH/bin/pserve production.ini
 
+Links
+-----
+
+* http://davidemoro.blogspot.it/    [still writing blog post]
