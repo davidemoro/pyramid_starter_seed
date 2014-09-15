@@ -22,8 +22,6 @@ def pyramid_starter_seed_clone():
         return 2
 
     _translate(args[0])
-    # TODO
-
 
 
 def _translate(new_package_name, original_package_name='pyramid_starter_seed'):
@@ -45,9 +43,8 @@ def _translate(new_package_name, original_package_name='pyramid_starter_seed'):
         return results
     
     
-    # duplichiamo la cartella
-    shutil.copytree(original_package_name, new_package_name, ignore=shutil.ignore_patterns('*.pyc', 'svn*', 'tmp*'))
-    
+    # copy tree
+    shutil.copytree(original_package_name, new_package_name, ignore=shutil.ignore_patterns('*.pyc', 'svn*', 'tmp*', '.git', 'node_modules'))
     
     original_slices = package_split(original_package_name)
     new_slices = package_split(new_package_name)
@@ -70,6 +67,7 @@ def _translate(new_package_name, original_package_name='pyramid_starter_seed'):
                 file_contents = string.replace(file_contents, old, new) 
                 file_contents = string.replace(file_contents, old.capitalize(), new.capitalize()) 
             # write translated version of file
+            # TODO: use with
             file_to_filter = open(os.path.join(item_path, item_file_path), 'w')
             file_to_filter.write(file_contents)
     

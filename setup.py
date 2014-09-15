@@ -38,5 +38,7 @@ setup(name='pyramid_starter_seed',
       entry_points="""\
       [paste.app_factory]
       main = pyramid_starter_seed:main
+      [console_scripts]
+      pyramid_starter_seed_clone = pyramid_starter_seed.scripts:pyramid_starter_seed_clone
       """,
       )
