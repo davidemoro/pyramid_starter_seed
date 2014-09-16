@@ -62,18 +62,19 @@ def _translate(new_package_name, original_package_name='pyramid_starter_seed'):
         for item_file_path in item_file_paths:
             # read the file and substitute patterns
             file_contents = ''
-            with open(os.path.join(item_path, item_file_path), 'rw+') as file_to_filter:
+            # TODO: avoid duplicated open files
+            with open(os.path.join(item_path, item_file_path), 'r') as file_to_filter:
                 file_contents = file_to_filter.read()
-                file_to_filter.seek(0)
 
-                # translate file
-                for trans in trans_map:
-                    old = trans[0]
-                    new = trans[1]
-                    file_contents = string.replace(file_contents, old, new) 
-                    file_contents = string.replace(file_contents, old.capitalize(), new.capitalize()) 
+            # translate file
+            for trans in trans_map:
+                old = trans[0]
+                new = trans[1]
+                file_contents = string.replace(file_contents, old, new) 
+                file_contents = string.replace(file_contents, old.capitalize(), new.capitalize()) 
 
-                # write translated version of file
+            # write translated version of file
+            with open(os.path.join(item_path, item_file_path), 'w') as file_to_filter:
                 file_to_filter.write(file_contents)
     
             # rename files
