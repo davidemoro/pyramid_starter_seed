@@ -38,6 +38,11 @@ Production mode::
 
     $ YOUR_VIRTUALENV_PYTHON_PATH/bin/pserve production.ini
 
+Clone pyramid_starter_seed
+--------------------------
+
+Fetch pyramid_starter_seed, personalize it and then clone it! (work in progress)
+
 Links
 -----
 
