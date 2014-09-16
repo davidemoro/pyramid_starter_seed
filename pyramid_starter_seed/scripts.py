@@ -46,7 +46,7 @@ def _translate(new_package_name, original_package_name='pyramid_starter_seed'):
     shutil.copytree(original_package_name,
                     new_package_name,
                     ignore=shutil.ignore_patterns('*.pyc', '.svn', '*.tmp', '*.egg-info', 
-                                                  '*.png', '*.gif', '*.svg', '*.ico', '*.jpg'
+                                                  '*.png', '*.gif', '*.svg', '*.ico', '*.jpg',
                                                   '.git', 'node_modules', '*.swp', '*~'))
     
     original_slices = package_split(original_package_name)
