@@ -43,8 +43,6 @@ Clone pyramid_starter_seed
 
 Fetch pyramid_starter_seed, personalize it and then clone it!
 
-This is still a TODO feature, so it doesn't work at this time.
-
 Pyramid starter seed can be fetched, personalized and released with another name.
 So other developer can build and release their own starter templates without having
 to write a new package template generator.
