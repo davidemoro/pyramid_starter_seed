@@ -21,7 +21,9 @@ def pyramid_starter_seed_clone():
         print('You must provide at least one argument')
         return 2
 
+    print('Start translating package...')
     _translate(args[0])
+    print('Done!')
 
 
 def _translate(new_package_name, original_package_name='pyramid_starter_seed'):
