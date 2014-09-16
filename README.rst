@@ -41,4 +41,4 @@ Production mode::
 Links
 -----
 
-* http://davidemoro.blogspot.it/    [still writing blog post]
+* http://davidemoro.blogspot.com/2014/09/pyramid-starter-seed-yeomam-part-1.html
