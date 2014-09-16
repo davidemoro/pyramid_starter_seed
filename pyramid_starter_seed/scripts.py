@@ -42,9 +42,12 @@ def _translate(new_package_name, original_package_name='pyramid_starter_seed'):
         results.extend(items)
         return results
     
-    
     # copy tree
-    shutil.copytree(original_package_name, new_package_name, ignore=shutil.ignore_patterns('*.pyc', 'svn*', 'tmp*', '.git', 'node_modules'))
+    shutil.copytree(original_package_name,
+                    new_package_name,
+                    ignore=shutil.ignore_patterns('*.pyc', '.svn', '*.tmp', '*.egg-info', 
+                                                  '*.png', '*.gif', '*.svg',
+                                                  '.git', 'node_modules', '*.swp', '*~'))
     
     original_slices = package_split(original_package_name)
     new_slices = package_split(new_package_name)
@@ -53,24 +56,25 @@ def _translate(new_package_name, original_package_name='pyramid_starter_seed'):
         item_path = step[0]
         item_dir_paths = step[1]
         item_file_paths = step[2]
-        print item_path, item_dir_paths, item_file_paths
     
         for item_file_path in item_file_paths:
             # read the file and substitute patterns
-            file_to_filter = open(os.path.join(item_path, item_file_path), 'r')
-            file_contents = file_to_filter.read()
-            file_to_filter.close()
+            file_contents = ''
+            with open(os.path.join(item_path, item_file_path), 'r') as file_to_filter:
+                file_contents = file_to_filter.read()
+
             # translate file
             for trans in trans_map:
                 old = trans[0]
                 new = trans[1]
                 file_contents = string.replace(file_contents, old, new) 
                 file_contents = string.replace(file_contents, old.capitalize(), new.capitalize()) 
+
             # write translated version of file
-            # TODO: use with
-            file_to_filter = open(os.path.join(item_path, item_file_path), 'w')
-            file_to_filter.write(file_contents)
+            with open(os.path.join(item_path, item_file_path), 'w') as file_to_filter:
+                file_to_filter.write(file_contents)
     
+            # rename files
             for trans in trans_map: 
                 old = trans[0]
                 new = trans[1]
