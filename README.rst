@@ -38,10 +38,10 @@ Production mode::
 
     $ YOUR_VIRTUALENV_PYTHON_PATH/bin/pserve production.ini
 
-Clone pyramid_starter_seed (work in progress)
----------------------------------------------
+Clone pyramid_starter_seed
+--------------------------
 
-Fetch pyramid_starter_seed, personalize it and then clone it! (work in progress).
+Fetch pyramid_starter_seed, personalize it and then clone it!
 
 This is still a TODO feature, so it doesn't work at this time.
 
@@ -63,6 +63,9 @@ pyramid_starter_seed.
 
 It might not work in some corner cases just in case you choose a new package
 name that contains reserved words or the name of a dependency of your plugin.
+
+As result you'll get also a new console script named `new_template_clone`, so it 
+sounds like a viral extension mechanism.
 
 Links
 -----
