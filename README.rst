@@ -69,3 +69,4 @@ Links
 -----
 
 * http://davidemoro.blogspot.com/2014/09/pyramid-starter-seed-yeomam-part-1.html
+* http://davidemoro.blogspot.com/2014/09/pyramid-starter-seed-yeoman-part-2.html
