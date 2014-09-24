@@ -4,6 +4,7 @@ import string
 import shutil
 import optparse
 import textwrap
+import pkg_resources
 
 def pyramid_starter_seed_clone():
     description = """\
@@ -45,7 +46,8 @@ def _translate(new_package_name, original_package_name='pyramid_starter_seed'):
         return results
     
     # copy tree
-    shutil.copytree(original_package_name,
+    original_location = pkg_resources.get_distribution(original_package_name).location
+    shutil.copytree(original_location,
                     new_package_name,
                     ignore=shutil.ignore_patterns('*.pyc', '.svn', '*.tmp', '*.egg-info', 
                                                   '.git', 'node_modules', '*.swp', '*~'))
